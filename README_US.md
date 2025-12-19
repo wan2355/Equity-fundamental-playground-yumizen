@@ -1,4 +1,4 @@
-# Equity-fundamental-playground-kana
+# Equity-fundamental-playground-yumizen
 A formula-first, structure-oriented playground for equity fundamental analysis.
 (Not for trading signals.)
 

@@ -11,6 +11,7 @@
 | Year | Year | 年度（FY） |
 | MaxYear | MaxYear | 入力データの最新年 |
 | WindowYears | WindowYears | 1サイクル=この年数。平均/最悪/成長をこの窓で計算 |
+| ActualWindowYears | ActualWindowYears | 実際に計算に使われた年数（intersectionなら全銘柄同一、per-tickerなら銘柄ごとに異なる） |
 | WindowStartYear | WindowStartYear | 窓の開始年（MaxYear-(WindowYears-1)） |
 | Revenue | Revenue | 売上（Billion USD） |
 | EBIT | EBIT | 利息・税引前利益（本業利益に近い） |
