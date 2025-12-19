@@ -35,38 +35,9 @@
 | PFCF_Latest | PFCF_Latest | 最新年: MC/FCF（出力表記はMC/FCF。FCF<=0は空欄） |
 | POwnerFCF_Latest | POwnerFCF_Latest | 最新年: MC/OwnerFCF=MC/(FCF-SBC)（出力表記はMC/OwnerFCF。<=0は空欄） |
 | Profile | Profile | 評価軸（CYCLE / SW / HW） |
-| CYCLE | CYCLE profile | 景気循環（波）の中で戦いやすい体質かを見る軸。耐性（EBIT/Rev_Min）や現金化（FCF/Rev）などを総合して相対評価する（投資判断そのものではない） |
-| SW | SW profile | ソフト寄り（軽装備・人/ソフトでスケールしやすい）体質を見る軸。CapEx/Rev（低いほどSW寄り）、SBC/Rev（高いほどSW寄り）と成長（Rev_CAGR）を中心に相対評価する。※良し悪しではなく体質の可視化 |
-| HW | HW profile | ハード寄り（重装備・資本集約）体質を見る軸。CapEx/Rev（高いほどHW寄り）を中心に、不況時の耐性（EBIT/Rev_Min, FCF/Rev_Min）も合わせて相対評価する。※良し悪しではなく体質の可視化 |
-| Valuation(Expensive) | Valuation (Expensive) | 割高さの軸（0-100）。本ツールでは『PS(MC/Rev)』『PFCF(MC/FCF)』『PEG_PS』などを0-100に正規化して合成（高い=割高寄り）。値は“優劣”ではなく、価格が織り込んでいる期待の強さを表す |
-| Quality | Quality | 稼ぐ力+耐性の軸（0-100）。本ツールでは『EBIT/Rev_Avg』『FCF/Rev_Avg』『EBIT/Rev_Min』『FCF/Rev_Min』を0-100に正規化して合成（高い=収益性/耐性が強い） |
-| Factor Map | Factor Map | 散布図: x=Valuation(Expensive), y=Quality。色=第3軸（デフォルトはCYCLE）、点サイズ=時価総額。『割高だが強い/安いが弱い/体質違い』を1枚で俯瞰する |
+| CYCLE | CYCLE profile | 景気循環（不況）でも崩れにくい軸。FCF/Revや最悪年の耐性、投資負担（CapEx/Rev）、割高さ（MC/Rev, MC/FCF）をバランス良く見る |
+| SW | SW profile | ソフトウェア/軽装備型を想定した軸。成長（Rev_CAGR, FCF_CAGR）と株主取り分の薄まり（SBC/Rev）を重視し、バリュエーションもチェック |
+| HW | HW profile | ハードウェア/重装備型を想定した軸。EBIT/Revと最悪年の耐性に加え、CapEx/Rev（装備負担）を強めに評価し、割高さも確認 |
 | Score_0to100 | Score_0to100 | 総合点（0-100）。出力では整数 |
 | Rating | Rating | A〜E評価（Scoreを丸め） |
 | S_xxx | S_xxx | 各指標の順位スコア（1-5） |
-
-<!--AUTO:DEFS_BEGIN-->
-
-## Definitions (auto-synced)
-
-### Score axes (0-100)
-- Score_SW: structure tilt toward software/human intensity (not 'good/bad').
-  - Higher means: lower CapEx/Rev (lighter), higher SBC/Rev (more human intensity), higher Rev CAGR (growth tilt).
-- Score_HW: structure tilt toward hardware/capital intensity (not 'good/bad').
-  - Higher means: higher CapEx/Rev (heavier) plus resilience checks (EBIT/Rev_Min, FCF/Rev_Min).
-- Score_CYCLE: cyclicality / stability score (higher = more stable / less cyclical).
-
-### Factor Map
-- X = Valuation (Expensive) 0-100: higher means 'more expensive' (NOT better).
-  - Components: PS_Latest (MC/Rev), MC/FCF, MC/OwnerFCF, PEG-like.
-- Y = Business Strength 0-100: higher means stronger profitability/resilience.
-  - Components: EBIT/Rev & FCF/Rev (Avg & Min).
-- Bubble size ~ Market Cap (B USD).
-- Color axis selectable: CYCLE / SW / HW.
-
-### Raw percentile bars (per ticker)
-- Each bar is a cross-sectional percentile rank among tickers in this run (0-100).
-- It is NOT a 'contribution'. Contribution is shown in the score breakdown charts.
-- Fixed group order: Valuation → Profitability → Efficiency → Growth → Scale.
-
-<!--AUTO:DEFS_END-->

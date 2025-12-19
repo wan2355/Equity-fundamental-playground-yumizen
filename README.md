@@ -1,4 +1,4 @@
-# Equity-fundamental-playground-kana
+# Equity-fundamental-playground-yumizen
 
 株式ファンダメンタル分析を  
 **数式ベース・構造理解重視**で行うための実験用リポジトリです。
